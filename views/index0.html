@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style0.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+                    let weatherIcon = {
+                        '01': 'fas fa-sun',
+                        '02': 'fas fa-cloud-sun',
+                        '03': 'fas fa-cloud',
+                        '04': 'fas fa-cloud-meatball',
+                        '09': 'fas fa-cloud-sun-rain',
+                        '10': 'fas fa-cloud-showers-heavy',
+                        '11': 'fas fa-poo-storm',
+                        '13': 'fas fa-snowflake',
+                        '50': 'fas fa-smog'
+                    };
+
+                    $ajax({
+                            url: 'http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=d9185bde24e2d43024ccf912170cca1f&units=mertic',
+                            dataType: 'json',
+                            type: 'GET',
+                            success: function (data) {
+                                var $Icon = (data.weather[0].icon).substr(0, 2);
+                                var $Temp = Math.floor(data.main.temp) + '°'
+                                var $city = data.name;
+
+                                $('.Currlcon').append('<i class="' + weatherIcon[$Icon] + '"></i>');
+                                $('.CurrTemp').prepend($Temp);
+                                $('.City').append($city);
+                            }                    
+                    })
+        });
+    </script>
+
+<body>
+        <div class="flex-container">
+            <div id="miro" class="text_effect">
+                안녕하세요.
+            </div>
+
+            <div id="miro" class="text_effect2">
+                어떤&nbsp;메뉴를&nbsp;원하시나요?
+            </div>
+
+        </div>
+
+        <div class="container">
+            <button class="btn_group" id="choose">오므라이스</button>
+            <button class="btn_group" id="choose" onclick="document.location.href='index.html'">소고기무국</button>
+            <button class="btn_group" id="choose">라구파스타</button>
+        </div>
+
+        <div class="item" id="weather">
+            <div class="Currlcon"></div>
+            <div class="CurrTemp"></div>
+            <div class="City"></div>
+        </div>
+
+</body>
+
+<script type="text/javascript" src="text.js"></script>

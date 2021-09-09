@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cookingchatbot",
+  "private_key_id": "ee82511365a7f99047d05a16f6c6637de3470f7e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCt20TfVUm5byCG\nBODutNMHAeoPeA7xj1M1va3YnIGVMNgRhvjec3N7cdcSg7UD5NszZ0elGuXdASRs\nCsBJxD4xRo3BQxeFZKFaM+hTEkJfVB2mkA9YU+PppYE5wqhkO8gTD1OQK8+YQAMp\n+2WcUu220vSXlzLmzBAioqR2KcZRWjqDDrz8vWxoolIWq2BTfIBqcXVUIhFyAAWm\nTfVqO9YZcKFDtNsJnuyilylbhH305v5MIjoSrvf8frRmVNg3MoZAx7OoMPcFa48z\ncgRknRaqXPV/NIuSZEke2GYqkOVk69mEFhb2i/+tyQ0+zVUaoxy9WV5GHH29mZuv\nvASY0jJBAgMBAAECggEAFbrmN/llqHonsSSXNjLO/Q1b02Dk0kPBKWKKwfwm1K5J\nFWC+xrQcsylakc95PrI6RSmjqnLrF+Vih2gNGnM/OEK6qVUg0Z0PL1J1V3u85MQj\nXBwdtOMwZZXYie8HA9c2hc5YuhiFvyCCHLtVuxUg7eTeajudYrxPCHs2begBCA4X\ncZKlb9bBXd349DxErrmkWxyfewgzvepOeF+r55MT6W9PA5JW+bkL+i3JV7e+ctpH\njClELxtSjvrU7xXkpLCWy+ZUizAf1GxnnwsrjMDaLwphw/yqhiplGNjQlj1bFjN8\nV7GKS3RGXXj+SuAO/CWn2+k6DyGPNDv6tVZjkvJnqQKBgQDnttHExdD+dQm9XJh4\n1TatasvPyHLcvYO0GN90FdRa/lT1H3fjcbvSd19UZfPkFW3qODJOsrix1yUx//Zr\nNmoQDQEz6rNZHEySaMYmj7VlaDtqwboKSdhj8Y3OlFDkGs/Vw4ZZN8xNS7B/35eg\nuXo+wRfWFxygxGsJH3JIj/kQCQKBgQDAFA6nO3X6/l8UCOWqRCEXofT8WyPLyn9c\nhzQ/9yjM/ZtVC36nf9J0PiwXjtTm4DREiFuut8rv+j+LlTW5YJx5c+289YpeBH2l\nSF/9miNT7Spbdpqq0rQ93Ra7GoIL99zUKzLDBeWHkUebK4fjGm1cRjBKFexs6aTN\nVObLz3gueQKBgQCG/XbPj/7lfwGhk+Qv4ObtuJ3r+vcPqkikDyl+04jXSfvsodyS\nYJvvTSP4Yzzmz6UtIngMaQo4cQJ2UowYgabgmvLsb/r0Gwxw7yEhLe+bmFGlLB9a\nBxNNhlf61WUavpP+EN6f82XOUh4NIRGQzP1uucdNLkG7VzKUKgHGTDnpIQKBgB52\nj+Rh/9Iw6a9pwdMBPyZaX1pusfyuPwjTwKusbWIljq8sRYgXM6+P9Lo/wvBi+qcr\n4S6So7Lvw4hFv+GIuwhgJIJlhu5mU+8UzXSRL60t3hvncZxKEqAFIofGKn3vb6yO\ntVxM4RxhJDQt8T1JgbKyxxHY7EhRvft6zafhXbQxAoGAaWqux7mvsXgrxIc0hacA\npX6wPEeqkmlir/4si9ViFJyNtT5hfJ1bGBhNyrUuljVy6TyplRQtMfs+6nyQPvCZ\nimAWkdnxdkLz/r6TIG4+ZqwU4mwjy9CqggIUbWn1wf8gZezwfp0o/dp8wfXLGUWW\nH1WSDDIj1rvzkZYeA2Gu2Tk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "fi-863@cookingchatbot.iam.gserviceaccount.com",
+  "client_id": "106607960238814497777",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fi-863%40cookingchatbot.iam.gserviceaccount.com"
+}
