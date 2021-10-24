@@ -37,10 +37,7 @@ io.on("connection", function (socket) {
         const sessionClient = new dialogflow.SessionsClient({
           keyFilename: "./cookingchatbot-ee82511365a7.json",
         });
-        const sessionPath = sessionClient.projectAgentSessionPath(
-          projectId,
-          sessionId
-        );
+        const sessionPath = sessionClient.projectAgentSessionPath(projectId, sessionId);
         const request = {
           session: sessionPath,
           queryInput: {
@@ -49,6 +46,14 @@ io.on("connection", function (socket) {
               languageCode: "ko-KR",
             },
           },
+          /*
+          queryParams: {
+            contexts: [
+            {
+            "name": "projects/cookingchatbot/locations/global/agent/sessions/2cac86fd-19d1-aa7f-b377-27d75df4002d/contexts/cookingstep2-followup",
+            "lifespanCount": 1
+            }]
+            }, */
         };
         const responses = await sessionClient.detectIntent(request);
 

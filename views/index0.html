@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style0.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>    
@@ -47,6 +49,46 @@
                     })
         });
     </script>
+    <script>
+    
+    const botReply = (text) => {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance();
+        utterance.rate = 1;
+        utterance.text = text;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        synth.speak(utterance);
+        };
+
+    botReply('안녕하세요. 어떤 요리를 해볼까요?');
+
+    const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "ko-KR";
+    recognition.interimResults = false;
+    recognition.addEventListener("end", recognition.start);
+    recognition.maxAlternatives = 10000;
+
+    recognition.start();
+
+    recognition.onresult = function (event) {
+    const last = event.results.length - 1;
+    const text = event.results[last][0].transcript;
+    console.log(text);
+
+        if(text.indexOf('소고기') != -1) {
+            document.getElementById('selected').click();
+        }
+
+
+    };
+    </script>
+
+
 
 <body>
         <div class="flex-container">
@@ -62,7 +104,7 @@
 
         <div class="container">
             <button class="btn_group" id="choose">오므라이스</button>
-            <button class="btn_group" id="choose" onclick="document.location.href='index.html'">소고기무국</button>
+            <button class="btn_group" id="selected" onclick="document.location.href='index.html'">소고기무국</button>
             <button class="btn_group" id="choose">라구파스타</button>
         </div>
 
@@ -74,4 +116,4 @@
 
 </body>
 
-<script type="text/javascript" src="text.js"></script>
+<script type="text/javascript" src="js/text.js"></script>

@@ -15,7 +15,7 @@ function effect(object, object2, speed, speed2) {
     var object_text = object.item(0).innerText;
     var object2_text = object2.item(0).innerText;
 
-    var object3_len = '3';
+    var object3_len = '1';
 
     // 기존에 있는 text모두 제거
     object.item(0).innerHTML = '';
@@ -74,7 +74,7 @@ function effect(object, object2, speed, speed2) {
                 }
             }, speed);
         }
-    }, 1500);
+    }, 3300);
 
     setTimeout(function () {
         for (var iii = 0; iii <= object3_len; iii++) {
@@ -95,5 +95,5 @@ function effect(object, object2, speed, speed2) {
                 }
             }, speed2);
         }
-    }, 6000);
+    }, 8000);
 }

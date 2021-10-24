@@ -86,6 +86,11 @@ html {
     color: black;
 }
 
+#selected:hover {
+    background-color: rgb(167, 203, 209);
+    color: black;
+}
+
 .weather {
     background-color: black;
     color: white;
