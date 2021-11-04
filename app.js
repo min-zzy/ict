@@ -16,6 +16,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = process.env.PORT || 3000;
 const projectId = 'cookingchatbot'
+var context = 'projects/cookingchatbot/agent/sessions/5bd81f18-c941-4a8c-9e61-1b9be8c5ab20/contexts/cookingstep1-followup';
+var i=0
+
 const server = app.listen(
   PORT,
   console.log(
@@ -23,21 +26,22 @@ const server = app.listen(
       .bold
   )
 );
-
+console.log(context)
 const io = socketio(server);
 io.on("connection", function (socket) {
   console.log("a user connected");
 
   socket.on("chat message", (message) => {
     console.log(message);
-
+    const sessionId = uuid.v4();
     const callapibot = async (projectId = process.env.PROJECT_ID) => {
       try {
-        const sessionId = uuid.v4();
+        
         const sessionClient = new dialogflow.SessionsClient({
           keyFilename: "./cookingchatbot-ee82511365a7.json",
         });
         const sessionPath = sessionClient.projectAgentSessionPath(projectId, sessionId);
+        var context = 'projects/cookingchatbot/agent/sessions/5bd81f18-c941-4a8c-9e61-1b9be8c5ab20/contexts/cookingstep'+String(i)+'-followup';
         const request = {
           session: sessionPath,
           queryInput: {
@@ -46,21 +50,30 @@ io.on("connection", function (socket) {
               languageCode: "ko-KR",
             },
           },
-          /*
+          
           queryParams: {
             contexts: [
             {
-            "name": "projects/cookingchatbot/locations/global/agent/sessions/2cac86fd-19d1-aa7f-b377-27d75df4002d/contexts/cookingstep2-followup",
-            "lifespanCount": 1
-            }]
-            }, */
+            "name": context,
+            "lifespanCount": 9
+            },
+            ]
+            },
         };
         const responses = await sessionClient.detectIntent(request);
 
         console.log("Detected intent");
+        console.log(context)
         const result = responses[0].queryResult.fulfillmentText;
+        var context = responses[0].queryResult.outputContexts[0].name;
         socket.emit("bot reply", result);
         console.log(result);
+        console.log(context);
+        if (context.indexOf('cookingstep') != -1) {
+          i += 1
+        }
+        
+        console.log(i)
         if (result.intent) {
           console.log(`  Intent: ${result.intent.displayName}`);
         } else {

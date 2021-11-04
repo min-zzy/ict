@@ -23,9 +23,9 @@ recognition.onresult = function (event) {
   
   if (text.indexOf('쿠쿠') != -1) {
   outputme.textContent = text;
-  console.log('미로');
+  console.log('사용자 명령');
   socket.emit("chat message", text);
-  } else {console.log('미로아님')}
+  } else {console.log('사용자명령 아님')}
   
 };
 
@@ -45,6 +45,9 @@ socket.on("bot reply", (text) => {
   botReply(text);
     if(text.indexOf('좋아요. 먼저') != -1) {
       document.getElementById('nextbtn').click();
+      setTimeout(function () {
+        botReply("칼을 쓰실 땐 조심해주세요");
+      }, 10000);
     } else if(text.indexOf('소고기는 키친타올에') != -1) {
       document.getElementById('nextbtn').click();
     } else if(text.indexOf('대파도 송송 썰거나') != -1) {
@@ -64,5 +67,4 @@ socket.on("bot reply", (text) => {
     }
 });
 /*
-
 */
